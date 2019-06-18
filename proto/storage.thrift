@@ -1,29 +1,31 @@
 namespace java com.rbkmoney.tds.storage
 namespace erlang tds
 
-typedef string Token
+typedef string TokenContent
+typedef string TokenID
 
-struct TokenData {
-    1: required Token access_token
+struct Token {
+    1: required TokenContent content
 }
 
-struct PutTokenResult {
-    1: required Token token
-}
+exception TokenNotFound {}
 
-exception InvalidTokenData {
-    1: optional string reason
-}
-
-exception TokenDataNotFound { }
-
-service Storage {
+/**
+ * Интерфейс для приложений
+ *
+ * При недоступности (отсутствии или залоченности) кейринга сервис сигнализирует об этом с помощью
+ * woody-ошибки `Resource Unavailable`.
+ */
+service TokenStorage {
 
     /** Получить токен */
-    TokenData GetTokenData (1: Token token)
-        throws (1: TokenDataNotFound not_found)
+    Token GetToken (1: TokenID token_id)
+        throws (
+            1: TokenNotFound not_found
+        )
 
     /** Сохранить токен */
-    PutTokenResult PutToken (1: TokenData token_data)
-        throws (1: InvalidTokenData invalid)
+    void PutToken (1: TokenID token_id, 2: Token token)
+        throws (
+        )
 }
