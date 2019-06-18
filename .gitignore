@@ -1,14 +1,11 @@
+# Erlang specific
+src/*.erl
+include/
+_build/
+
 # Created by .ignore support plugin (hsz.mobi)
-.eunit
-deps
-*.o
-*.beam
-*.plt
 erl_crash.dump
-ebin/*.beam
-rel/example_project
 .concrete/DEV_MODE
-.rebar
 target/
 pom.xml.tag
 pom.xml.releaseBackup

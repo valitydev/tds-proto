@@ -1,4 +1,5 @@
 namespace java com.rbkmoney.tds.storage
+namespace erlang tds
 
 typedef string Token
 

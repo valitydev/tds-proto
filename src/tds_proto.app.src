@@ -1,0 +1,9 @@
+{application, tds_proto, [
+    {description, "Thrift proto for TDS"},
+    {vsn, "0.1.0"},
+    {applications, [
+        kernel,
+        stdlib
+    ]},
+    {maintainers, []}
+]}.
