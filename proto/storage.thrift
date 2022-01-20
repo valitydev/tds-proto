@@ -1,4 +1,4 @@
-namespace java com.rbkmoney.tds.storage
+namespace java dev.vality.tds.storage
 namespace erlang tds
 
 typedef string TokenContent
