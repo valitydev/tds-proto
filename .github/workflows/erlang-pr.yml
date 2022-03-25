@@ -1,9 +1,9 @@
 name: Erlang
 on:
   pull_request:
-    branches: [ '*' ]
+    branches: ['*']
   push:
-    branches: [ master ]
+    branches: [master]
 
 jobs:
   build:
