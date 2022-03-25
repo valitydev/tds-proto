@@ -24,7 +24,7 @@ jobs:
           rebar3-version: '3.18'
 
       - name: Restore PLT cache
-        uses: actions/cache@v2
+        uses: actions/cache@v3
         id: plt-cache
         with:
           key: |
